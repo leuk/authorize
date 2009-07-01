@@ -1,0 +1,4 @@
+*.log
+*.sqlite3
+config/database.yml
+db/schema.sql
