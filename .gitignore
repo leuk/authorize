@@ -3,3 +3,4 @@
 config/database.yml
 db/schema.sql
 db/schema.rb
+public/assets/avatars/*
