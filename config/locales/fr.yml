@@ -1,6 +1,6 @@
 # French translations for Ruby on Rails
 # by Christian Lescuyer (christian@flyingcoders.com)
-# contributor: Sebastien Grosjean - ZenCocoon.com
+# contributor: Sebastien Grosjean - ZenCocoon.com 
  
 fr:
   date:
@@ -143,4 +143,18 @@ fr:
         email: email
         password: le mot de passe
         remember_me: remember me
+        
+# Translations for application flash messages 
+  	error_denied: Vous n'avez pas les privilèges pour voir cette page.
+  	
+  	role_created: Rôle utlisateur de l' application crée.
+  	user_created: Nouvel utilisateur de l' application crée.
+  	user_session_created: Vous êtes maintenant connecté(e).
+  	
+  	
+  	role_updated: Modifications du rôle utlisateur de l' application effectuée.
+  	user_updated: Paramétres utlisateur de l' application enregistrés.
+  	
+  	role_deleted: Suppression du rôle utlisateur de l' application effectuée. 
+  	user_session_deleted: Vous êtes maintenant déconnecté(e).     
         

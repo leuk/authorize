@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   def index 
   	@users = User.all
   end		
+  
+  def show
+  	@user = User.find_by_id( params[:id])
+  end
   def new
     @user = User.new
   end
@@ -10,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save && @user.roles.create(:title => 'user')
-      flash[:notice] = "Registration Successfull."
+      flash[:notice] = t('user_created')
       redirect_to root_url
     else
       render :action => 'new'
@@ -24,8 +28,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:notice] = "User parameters uccesfully updated."
-      redirect_to root_url
+      flash[:notice] = t('user_updated')
+      redirect_to user_path(@user)
     else
       render :action => 'edit'
     end

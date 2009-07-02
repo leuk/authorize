@@ -8,6 +8,7 @@ authorization do
   role :user do
     includes :guest
     has_permission_on :users, :to => :create
+    has_permission_on :users, :to => :read 
     has_permission_on :users, :to => :update 
     has_permission_on :user_sessions, :to => :delete
   end
@@ -15,6 +16,7 @@ authorization do
   role :admin do
   	includes :user
     has_permission_on :users, :to => :manage
+    has_permission_on :roles, :to => :manage
     has_permission_on :user_sessions, :to => :manage    
     has_permission_on :user_sessions, :to => :delete
     has_permission_on :authorization_rules, :to => :read
