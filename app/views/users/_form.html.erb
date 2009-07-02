@@ -1,4 +1,4 @@
-<% form_for @user do |f| %>
+<% form_for @user , :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :username %><br />
@@ -16,5 +16,11 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
+  
+  <p>  
+  	<%= f.label :Avatar %><br />
+    <%= f.file_field :avatar %>
+  </p>
+
   <p><%= f.submit "Submit" %></p>
 <% end %>
