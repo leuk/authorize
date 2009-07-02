@@ -1,7 +1,8 @@
 <p>
 	<p style= "float:left"><%= image_tag @user.avatar.url(:thumb) %></p>
 	<p = "float:right">
-		Nombre donnexions: <%= @user.login_count %><br/>
+		Nombre total de connexions au site: <%= @user.login_count %><br/>
+		Membre depuis le: <%= @user.created_at %><br/>
 		Dernière activité sur le site: <%= @user.last_request_at %><br/>
 		Dernière IP utilisée sur le site: <%= @user.last_login_ip %><br/>
 		IP utilisée sur le site actuellement: <%= @user.last_login_ip %><br/>	

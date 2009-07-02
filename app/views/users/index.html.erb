@@ -1,3 +1,4 @@
 <% for user in @users -%>
+    <%= image_tag user.avatar.url(:thumb) %>
 	<%= link_to user.username , user_path(user) %>
 <% end -%>
