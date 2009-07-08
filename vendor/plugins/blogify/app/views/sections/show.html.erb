@@ -1,0 +1,27 @@
+<p>
+  <b>Title:</b>
+  <%=h @section.title %>
+</p>
+<p>
+  <b>Image:</b>
+  <%= image_tag @section.image.url(:thumb) %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%=h @section.keywords %>
+</p>
+
+<p>
+  <b>Meta:</b>
+  <%=h @section.meta %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @section.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>

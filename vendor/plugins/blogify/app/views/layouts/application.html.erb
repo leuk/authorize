@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <%= javascript_include_tag :defaults%>
+  <%= javascript_include_tag  'jquery'  %>
+  <%= javascript_include_tag 's3Slider' %>
+  <%= include_tiny_mce_if_needed %>
+  <%= calendar_date_select_includes :style => "red" %>
+  <% CalendarDateSelect.format=(:iso_date) %>
+  <%= stylesheet_link_tag 'scaffold' , 'content', 'grids' , 
+  						  'template' , 'libraries' %>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#slider1').s3Slider({
+            timeOut: 4000 
+        });
+    });
+</script>
+</head>
+<body>
+<div class="page">
+	<!--HEADER BLOCK -->
+		<div class="line">
+			<!--LOGO POSITION -->
+				<div class="unit size1of3">
+					<p>Logo</p>
+				</div>
+			<!--END LOGO POSITION -->	
+			
+			<!--NEWSFLASH POSITION -->	
+				<div class="unit size1of3 ">
+					Newsflash
+				</div>
+			<!--END NEWSFLASH POSITION -->
+			
+			<!--SEARCH POSITION -->
+				<div class="unit size1of3 lastUnit">
+					<p>Search</p>
+				</div>
+			<!--END SEARCH POSITION -->
+		</div>
+	<!--END HEADER BLOCK -->
+	
+	<!--MAIN-MENU POSITION -->	
+		<div class="head" style="background:red">
+			<h2>Main menu</h2>
+		</div>
+	<!--MAIN-MENU POSITION -->
+	
+	<!--AVERT & MAIN SLIDER BLOCK -->
+		<div class="line">
+			
+			<!--MAIN-SLIDER POSITION -->
+				<div class="unit size3of4">
+					<%= yield :slider %>
+				</div>
+			<!--END MAIN-SLIDER POSITION -->
+			
+			<!--ADVERT POSITION -->
+				<div class="unit size1of4 lastUnit">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+				</div>
+			<!--ADVERT POSITION -->
+				
+		</div>
+	<!--END AVERT & MAIN SLIDER BLOCK -->
+	
+	<!--AVERTISEMENT POSITIONS :COUNT => 3 -->
+		<div class="line">
+			<!--ADVERTISEMENT-1 POSITION -->
+				<div class="unit size1of3">
+					<%= yield :advertisement_1 %>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit ... </p>
+				</div>	
+			<!-- END ADVERTISEMENT-2 POSITION -->
+			<!--ADVERTISEMENT-2 POSITION -->	
+				<div class="unit size1of3 ">
+					<%= yield :advertisement_2 %>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit ... 	</p>
+				</div>
+			<!-- END ADVERTISEMENT-2 POSITION -->
+			<!--ADVERTISEMENT-3 POSITION -->
+				<%= yield :advertisement_3 %>
+				<div class="unit size1of3 lastUnit">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit ... 	</p>
+				</div>
+			<!-- END ADVERTISEMENT-3 POSITION -->
+		</div>
+	<!-- END AVERTISEMENT POSITIONS :COUNT => 3 -->
+	
+	<!--PAGE MAIN BODY BLOCK -->
+		<div class="body">
+			<!--LEFT COLUMN POSITION -->
+			<div class="leftCol">
+				<%= yield :leftCol %>
+								
+			</div>
+			<!--RIGHT COLUMN POSITION -->
+			<div class="rightCol">
+				<%= yield :rightCol %>
+				<h2>Right Col</h2>		
+			</div>
+			<!--MAIN COLUMN POSITION -->
+			<div class="main">
+				<h2>Main Content</h2>
+				<!--BREADCRUMBS POSITION -->			
+					<div class="line" style="background:green">Breadcrumbs </div>
+				<!--BREADCRUMBS POSITION -->
+				
+				<!--FLASH-MESSAGES POSITION -->			
+					<div class="line" style="background:yellow">
+						<%- flash.each do |name, msg| -%>
+					      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+					    <%- end -%>
+					 </div>
+				<!--FLASH-MESSAGES POSITION -->	
+				<%= yield  %>		
+			</div>
+		</div>
+	<!--END PAGE MAIN BODY BLOCK -->
+	
+	<!--FOOTER POSITION -->
+		<div class="foot" style='background:gray'>
+			<h2>Footer</h2>	
+			<%= yield :Footer %>		
+		</div>	
+	<!--END FOOTER POSITION -->
+</div>
+</body>
+</html>

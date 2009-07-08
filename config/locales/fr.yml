@@ -149,12 +149,14 @@ fr:
   	
   	role_created: Rôle utlisateur de l' application crée.
   	user_created: Nouvel utilisateur de l' application crée.
+  	section_created: Une Section ajoutée dans l'application.
   	user_session_created: Vous êtes maintenant connecté(e).
-  	
   	
   	role_updated: Modifications du rôle utlisateur de l' application effectuée.
   	user_updated: Paramétres utlisateur de l' application enregistrés.
+  	section_updated: Modifications sur la section enregistrées.
   	
   	role_deleted: Suppression du rôle utlisateur de l' application effectuée. 
+  	section_deleted: Une Section supprimée dans l'application.
   	user_session_deleted: Vous êtes maintenant déconnecté(e).     
         

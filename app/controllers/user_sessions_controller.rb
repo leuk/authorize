@@ -2,7 +2,7 @@ class UserSessionsController < ApplicationController
 	
   before_filter :new_user_session, :only => :new	
 	
-  #filter_access_to :all 	
+  filter_access_to :all 	
 	
   def new
     #@user_session = UserSession.new
