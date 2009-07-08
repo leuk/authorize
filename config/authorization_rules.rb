@@ -10,6 +10,7 @@ authorization do
     has_permission_on :users, :to => :create
     has_permission_on :users, :to => :read 
     has_permission_on :users, :to => :update 
+    has_permission_on :users, :to => :rate 
     has_permission_on :user_sessions, :to => :delete
   end
   

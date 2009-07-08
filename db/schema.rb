@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090708033543) do
+ActiveRecord::Schema.define(:version => 20090708043113) do
 
   create_table "rates", :force => true do |t|
     t.integer  "user_id"
@@ -32,15 +32,15 @@ ActiveRecord::Schema.define(:version => 20090708033543) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username",                           :null => false
-    t.string   "email",                              :null => false
-    t.string   "crypted_password",                   :null => false
-    t.string   "password_salt",                      :null => false
-    t.string   "persistence_token",                  :null => false
-    t.string   "single_access_token",                :null => false
-    t.string   "perishable_token",                   :null => false
-    t.integer  "login_count",         :default => 0, :null => false
-    t.integer  "failed_login_count",  :default => 0, :null => false
+    t.string   "username",                             :null => false
+    t.string   "email",                                :null => false
+    t.string   "crypted_password",                     :null => false
+    t.string   "password_salt",                        :null => false
+    t.string   "persistence_token",                    :null => false
+    t.string   "single_access_token",                  :null => false
+    t.string   "perishable_token",                     :null => false
+    t.integer  "login_count",         :default => 0,   :null => false
+    t.integer  "failed_login_count",  :default => 0,   :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20090708033543) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.decimal  "rating_average",      :default => 0.0
   end
 
 end

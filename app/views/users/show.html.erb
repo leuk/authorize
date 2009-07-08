@@ -5,6 +5,7 @@
 		Membre depuis le: <%= @user.created_at %><br/>
 		Dernière activité sur le site: <%= @user.last_request_at %><br/>
 		Dernière IP utilisée sur le site: <%= @user.last_login_ip %><br/>
-		IP utilisée sur le site actuellement: <%= @user.last_login_ip %><br/>	
+		IP utilisée sur le site actuellement: <%= @user.last_login_ip %><br/>			<%=  @user.rating_average %>
 	</p>
+	<%= ratings_for @user , current_user %>
 </p>

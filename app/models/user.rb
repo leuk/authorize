@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 	
 	# Application Registered Users Acts As Ajaxful-Raters
 	  ajaxful_rater
+	
+	# Application Registered Users Are Ajaxful-Rateable  
+	  ajaxful_rateable :stars => 10 , :allow_update => true
 
 	# Handling paperclip attached images for user avatars 
 	  has_attached_file :avatar, :styles => { :small=>"150x150>",:thumb=>"50x50>",:avatar=>"250x250>" },
