@@ -1,16 +1,19 @@
-<% title "Members Login" %>
-
-<% form_for @user_session do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
+<% if current_user -%>
+	<h2> Vous êtes connecté</h2>
+<% else -%>	
+	<% title "Members Login" %>
+	<% form_for @user_session do |f| %>
+	  <%= f.error_messages %>
+	  <p>
+	    <%= f.label :username %><br />
+	    <%= f.text_field :username %>
+	  </p>
+	  <p>
+	    <%= f.label :password %><br />
+	    <%= f.password_field :password %>
+	  </p>
+	  <p><%= f.submit "Submit" %></p>
+	<% end %>
+<% end -%>
 
 

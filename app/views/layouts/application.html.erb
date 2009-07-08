@@ -12,12 +12,14 @@
     		
     		<% if current_user -%>
     			<%= link_to 'edit profile' , edit_user_path(current_user)%> | 
-    			<%= link_to 'logout' , logout_path %>
+    			<%= link_to 'logout'   , logout_path %> | 
+    			<%= link_to 'membres'  , users_path %>	
     		<% else -%>
 	    		<%= link_to 'register' , new_user_path %> | 	
-	    		<%= link_to 'login'   , login_path %>	    		
+	    		<%= link_to 'login'    , login_path %>	
+	    		    		
     		<% end -%>
-
+			
 		</div>
 		<br>
       <%- flash.each do |name, msg| -%>
