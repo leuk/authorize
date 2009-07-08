@@ -9,13 +9,45 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090702061713) do
+ActiveRecord::Schema.define(:version => 20090705050055) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.date     "s_publish"
+    t.date     "e_publish"
+    t.string   "page_title"
+    t.string   "keywords"
+    t.string   "meta"
+    t.boolean  "status",             :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "section_id"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "sections", :force => true do |t|
+    t.string   "title"
+    t.string   "keywords"
+    t.string   "meta"
+    t.boolean  "status",             :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "articles_count",     :default => 0
   end
 
   create_table "users", :force => true do |t|

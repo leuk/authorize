@@ -1,0 +1,9 @@
+<%= image_tag @article.image.url(:original) %>
+  <h2><%=h @article.title %>:</h2>
+  <%= @article.content %>
+
+<p>
+  <%= link_to "Edit", edit_article_path(@article) %> |
+  <%= link_to "Destroy", @article, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", articles_path %>
+</p>

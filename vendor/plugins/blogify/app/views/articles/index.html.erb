@@ -1,0 +1,20 @@
+
+<% content_for :slider do -%>
+	<div id="slider1">
+        <ul id="slider1Content">
+          <% for article in @articles -%>
+            <%  cssClass = cycle(:top , :bottom) %>
+             <li class="slider1Image">
+                <%= imglink(article) %>
+                <%= randomspan (article , cssClass) %>
+             </li>    
+           <% end %>
+            <div class="clear slider1Image"></div>
+        </ul>
+    </div>
+<% end -%>
+<!-- RENDERING MAIN PAGE ARTICLES -->
+  <% for article in @articles %>
+	<%= push_articles(article) %>
+  <% end %>
+<!-- END RENDERING MAIN PAGE ARTICLES -->
